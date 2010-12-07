@@ -55,13 +55,13 @@
       dt.setTime(dt.getTime() + lifetime);
       expires = "expires= " + dt.toGMTString();
 
-      document.cookie = keyMeta + itemKey + "=" + itemValue + "; " + expires + "; path=/";
+      document.cookie = keyMeta + itemKey.toString() + "=" + itemValue + "; " + expires + "; path=/";
       return true;
     }
 
     // set specified item
     try{
-      localStorage.setItem(keyMeta+itemKey, JSON.stringify(itemValue));
+      localStorage.setItem(keyMeta+itemKey.toString(), JSON.stringify(itemValue));
     } catch (e){
       // if the browsers database is full produce error
       if (e == QUOTA_EXCEEDED_ERR) {
@@ -76,7 +76,7 @@
   this.loadItem = function(itemKey){
     if(itemKey===null){ return null; }
     if (!supported){
-      var cooKey = keyMeta + itemKey + "=";
+      var cooKey = keyMeta + itemKey.toString() + "=";
       // go through cookies looking for one that matchs the specified key
       var cookArr = document.cookie.split(';');
       for(var i=0, cookCount = cookArr; i < cookCount; i++){
@@ -92,7 +92,7 @@
       return null;
     }
 
-    var data = localStorage.getItem(keyMeta+itemKey);
+    var data = localStorage.getItem(keyMeta+itemKey.toString());
     if (data){
       return JSON.parse(data);
     }else{
@@ -103,11 +103,11 @@
   // removes specified item
   this.deleteItem = function (itemKey){
     if (!supported){
-      document.cookie = keyMeta + itemKey + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      document.cookie = keyMeta + itemKey.toString() + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
       return true;
     }
 
-    localStorage.removeItem(keyMeta+itemKey);
+    localStorage.removeItem(keyMeta+itemKey.toString());
     return true;
   };
 
@@ -129,4 +129,3 @@
   // jquery namespace for the function set
   jQuery.Storage = this;
 })(jQuery);
-
