@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!-- the "no-js" class is for Modernizr. -->
+<head class="html5reset-kitchensink-commented">
+  <meta charset="utf-8" />
+
+  <!-- This prevents the conditional comments below from holding up the page load
+     www.phpied.com/conditional-comments-block-downloads/ -->
+  <!--[if IE]><![endif]-->
+
+  <title>localStorage jQuery</title>
+  <link rel="stylesheet" href="_/css/main.css" />
+  <!-- main.css is a gateway file. You will spend your time in core.css -->
+  <link rel="stylesheet" href="_/css/_print/main.css" media="print" />
+
+  <!-- These are IE-specific conditional style sheets.
+     You might consider removing the ones you don't end up using. -->
+  <!--[if IE]>
+  <link rel="stylesheet" href="_/css/patches/win-ie-all.css" />
+  <![endif]-->
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="_/css/patches/win-ie7.css" />
+  <![endif]-->
+  <!--[if lt IE 7]>
+  <link rel="stylesheet" href="_/css/patches/win-ie-old.css" />
+  <![endif]-->
+
+  <!-- The following is STRONGLY OPTIONAL, but useful if you really need to kick IE in the pants.
+     There are different flavors; pick the one right for your project: http://code.google.com/p/ie7-js/ -->
+  <!--[if lt IE 8]>
+  <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js"></script>
+  <![endif]-->
+
+  <!-- Either Modernizr OR the HTML5 Shiv script is required if you want IE compatability, AND you want to use the new,
+     more-semantic HTML5 elements (header, article, footer, etc)
+     - we've only included Modernizr; HTML5 Shiv can be found here: http://html5shiv.googlecode.com -->
+
+  <!-- MODERNIZR: http://www.modernizr.com/ -->
+  <script src="_/js/modernizr-1.6.min.js"></script>
+
+  <script src="_/js/jquery-1.4.2.min.js"></script>
+  <script src="_/js/jquery.Storage.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(!$.Storage.loadItem('test')){
+        //$.localStorage.saveItem('test', 'stoimen', 5000);
+
+        // generate new saved value
+        var today = new Date();
+        $.Storage.saveItem('test', 'd:'+today, 5000);
+      }else{
+        alert($.Storage.loadItem('test'));
+
+        //$('article').html(loadVal);
+        $.Storage.deleteAll();
+      }
+    });
+  </script>
+</head>
+<body>
+
+<div>
+
+  <header>
+    <h1><a href="/">Local Storage Test</a></h1>
+  </header>
+  <article>
+    Refresh the page to view process different storage functions.
+    Saves/Deletes based on previous processed action.
+  </article>
+
+  <footer>
+    <p><small>&copy; Copyright Brandon Hicks 2010. All Rights Reserved.</small></p>
+  </footer>
+
+</div>
+</body>
+</html>

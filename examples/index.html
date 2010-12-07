@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+<!-- the "no-js" class is for Modernizr. -->
+
+<head class="html5reset-kitchensink-commented">
+
+  <meta charset="utf-8" />
+
+  <!-- This prevents the conditional comments below from holding up the page load
+     www.phpied.com/conditional-comments-block-downloads/ -->
+  <!--[if IE]><![endif]-->
+
+  <title>localStorage jQuery</title>
+
+  <link rel="stylesheet" href="_/css/main.css" />
+  <!-- main.css is a gateway file. You will spend your time in core.css -->
+
+  <link rel="stylesheet" href="_/css/_print/main.css" media="print" />
+
+  <!-- These are IE-specific conditional style sheets.
+     You might consider removing the ones you don't end up using. -->
+
+  <!--[if IE]>
+  <link rel="stylesheet" href="_/css/patches/win-ie-all.css" />
+  <![endif]-->
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="_/css/patches/win-ie7.css" />
+  <![endif]-->
+  <!--[if lt IE 7]>
+  <link rel="stylesheet" href="_/css/patches/win-ie-old.css" />
+  <![endif]-->
+
+  <!-- The following is STRONGLY OPTIONAL, but useful if you really need to kick IE in the pants.
+     There are different flavors; pick the one right for your project: http://code.google.com/p/ie7-js/ -->
+  <!--[if lt IE 8]>
+  <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js"></script>
+  <![endif]-->
+
+  <!-- Either Modernizr OR the HTML5 Shiv script is required if you want IE compatability, AND you want to use the new,
+     more-semantic HTML5 elements (header, article, footer, etc)
+     - we've only included Modernizr; HTML5 Shiv can be found here: http://html5shiv.googlecode.com -->
+
+  <!-- MODERNIZR: http://www.modernizr.com/ -->
+  <script src="_/js/modernizr-1.6.min.js"></script>
+
+  <script src="_/js/jquery-1.4.2.min.js"></script>
+  <script src="_/js/jquery.Storage.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      // save
+      $('#saveForm').submit(function() {
+        var keyValue = $('#storeKey').val();
+        var storeValue = $('#storeValue').val();
+
+        $.Storage.saveItem(keyValue, storeValue);
+
+        alert('Value saved!!!.');
+        return false;
+      });
+
+      // load
+      $('#loadForm').submit(function() {
+
+        var keyValue = $('#loadKey').val();
+        var storageValue = $.Storage.loadItem(keyValue);
+
+        alert(storageValue);
+        return false;
+      });
+    });
+  </script>
+</head>
+<body>
+
+<div>
+
+  <header>
+    <h1><a href="/">Local Storage Test</a></h1>
+  </header>
+  <article>
+    <form id="saveForm">
+      <h2>Saving Values</h2>
+      <p>
+        <label for="storeKey">Storagekey</label>
+        <input type="text" id="storeKey" />
+      </p>
+
+      <p>
+        <label for="storeValue">StorageValue</label>
+        <input type="text" id="storeValue" />
+      </p>
+      <input type="submit" id="saveitem" value="Save Item" />
+    </form>
+  </article>
+
+  <br /><br /><br />
+
+  <article>
+    <form id="loadForm">
+    <h2>Loading Values</h2>
+    <p>
+      <label for="loadKey">StorageKey</label>
+      <input type="text" id="loadKey" />
+    </p>
+    <input type="submit" id="loaditem" value="Load Item" />
+    </form>
+  </article>
+
+  <footer>
+    <p><small>&copy; Copyright Brandon Hicks 2010. All Rights Reserved.</small></p>
+  </footer>
+
+</div>
+</body>
+</html>
