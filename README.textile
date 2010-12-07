@@ -7,14 +7,11 @@ This plugin provides a simple wrapper to store data in the browser. This allows 
 <pre> // Saving
   $.Storage.saveItem('cow','moo');
 
-
   // Loading
   $.Storage.loadItem('cow');
 
-
   // Delete
   $.Storage.deleteItem('cow');
-
 
   // Clear all values
   $.Storage.deleteAll();
