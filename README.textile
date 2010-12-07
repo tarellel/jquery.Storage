@@ -3,9 +3,10 @@ h2. jQuery.Storage
 This plugin provides a simple wrapper to store data in the browser. This allows data to be recalled later on for settings, saved state, etc.
 
 **Code Sample
-<code>
-  // Saving
+
+<pre> // Saving
   $.Storage.saveItem('cow','moo');
+
 
   // Loading
   $.Storage.loadItem('cow');
@@ -17,7 +18,7 @@ This plugin provides a simple wrapper to store data in the browser. This allows 
 
   // Clear all values
   $.Storage.deleteAll();
-</code>
+</pre>
 
 
 h2. TODO
