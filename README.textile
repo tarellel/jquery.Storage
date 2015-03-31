@@ -1,3 +1,6 @@
+h1. Discontinued
+*Note* I have recieved and still reviece numerous emails regarding getting jQuery.Storage up to date and adding the features that I have listed in my todo list. At the moment this project is currently completely inactive with no foreseeable plans to update or continue its development. There are various alternatives to this library. And in my opinion with the updating standards of all major browsers a javascript library similar to this may no longer be needed in the near future.
+
 h2. jQuery.Storage
 
 This plugin provides a simple wrapper to store data in the browser. This allows data to be recalled later on for settings, saved state, etc.
@@ -18,14 +21,4 @@ This plugin provides a simple wrapper to store data in the browser. This allows 
 </pre>
 
 
-h2. TODO
-* Fix null return error when trying to load from cookie
-* Fallbacks
-  ** Use something similar to "Gallery Storage Lite (Yahoo - Gallery Storage Lite)":http://www.yuiblog.com/blog/2010/02/23/gallery-storage-lite/ for fallbacks
-  *** localStorage - Firefox 3.5+, Chrome 4+, Safari 4+, IE8, Opera 10.5+
-  *** globalStorage - Firefox 2.x and 3.0.x
-  *** sessionStorage - n/a
-  *** databaseStorage,  - Safari 3.1 and 3.2
-  *** userData persistence - IE6, IE7
-  *** Consider using SWFstore to store flash cookies as well
-* Output to console.log("Error Message") when an error is produced
+
