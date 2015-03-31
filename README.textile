@@ -1,6 +1,6 @@
 h1. Discontinued
 
-*Note* I have recieved and still reviece numerous emails regarding getting jQuery.Storage up to date and adding the features that I have listed in my todo list. At the moment this project is currently completely inactive with no foreseeable plans to update or continue its development. There are various alternatives to this library. And in my opinion with the updating standards of all major browsers a javascript library similar to this may no longer be needed in the near future.
+*Note* I have received and still reviece numerous emails regarding getting jQuery.Storage up to date and adding the features that I have listed in my todo list. At the moment this project is currently completely inactive with no foreseeable plans to update or continue its development. There are various alternatives to this library. And in my opinion with the updating standards of all major browsers a javascript library similar to this may no longer be needed in the near future.
 
 h2. jQuery.Storage
 
